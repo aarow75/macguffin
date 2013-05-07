@@ -1,0 +1,13 @@
+<%= link_to 'New Movie', new_movie_path %>
+<% tag_cloud(@tags, %w(1 2 3 4)) do |tag, count| %>
+  | <%= link_to tag.name.titleize, { :action => :tagged, :tag => tag.name}, :class => "tag-link" %>
+<% end %>
+
+<br/>
+<%= select_tag_for_filter("movies", @filters, params) %>
+(<%= @movies.count %> results)
+<br/>
+
+<%= render 'list', :movies => @movies %>
+
+

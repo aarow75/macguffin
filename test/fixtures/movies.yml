@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cover: MyString
+  digital_copy: false
+  director: MyString
+  format: MyString
+  freshness: MyString
+  imdb: MyString
+  lead_actor: MyString
+  notes: MyText
+  production_designer: MyString
+  screenwriter: MyString
+  title: MyString
+  year: MyString
+
+two:
+  cover: MyString
+  digital_copy: false
+  director: MyString
+  format: MyString
+  freshness: MyString
+  imdb: MyString
+  lead_actor: MyString
+  notes: MyText
+  production_designer: MyString
+  screenwriter: MyString
+  title: MyString
+  year: MyString

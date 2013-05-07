@@ -1,0 +1,15 @@
+<% books.each do |book| %>
+  <div class="book">
+    <img src="<%= book.cover %>" />
+    <br/>
+    <p><%= link_to truncate(book.title), book %> (<%= book.year[0..3] %>)</p>
+    <div class="star-container"><div class="star <%= book.rating.to_i.to_words %>"></div></div>
+    <div class="aggregate_rating">
+		<%= book.page_count %> pg.
+		<br/>	
+		<%= book.review_count %> <span style="font-size: 16px;">✍</span>
+		<br/>
+		<%= book.average_rating %> <span style="font-size: 12px; color: orange">★&nbsp;</span>
+    </div>
+  </div>
+<% end %>

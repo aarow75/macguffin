@@ -1,0 +1,10 @@
+<%= link_to 'New Book', new_book_path %>
+<% tag_cloud(@tags, %w(1 2 3 4)) do |tag, count| %>
+  | <%= link_to tag.name.titleize, { :action => :tagged, :tag => tag.name}, :class => "tag-link" %>
+<% end %>
+<br/>
+<%= select_tag_for_filter("books", @filters, params) %>
+(<%= @books.count %> results)
+<br/>
+
+<%= render 'list', :books => @books %>

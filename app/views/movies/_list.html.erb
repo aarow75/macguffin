@@ -1,0 +1,18 @@
+<% movies.each do |movie| %>
+  <div class="movie">
+    <img src="<%= movie.cover %>" />
+    <br/>
+    <p><%= link_to truncate(movie.title), movie %> (<%= movie.year %>)</p>
+    <div class="star-container"><div class="star <%= movie.average_user_rating.to_i.to_words %>"></div></div>
+    <div class="aggregate_rating">
+    	<%= movie.aggregate_rating.ceil %>% 
+		<% movie.tags.any? %>   	
+		<% movie.tags.each do |t| %>
+			<% if t.name == "mobile" || t.name == "blu-ray" || t.name == "dvd" || t.name == "ultraviolet" || t.name == "apple" %>
+			<br/><a href="<%= tagged_url(:tag => t.name) %>"><img src='/assets/<%= t.name %>.png' /></a>
+			<% end %>
+		<% end %>
+		<br/>	
+    </div>
+  </div>
+<% end %>

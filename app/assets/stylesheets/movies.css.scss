@@ -1,0 +1,139 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+	font-family: "Chunk";
+	src: url("Chunkfive-webfont.ttf");
+}
+
+@font-face {
+	font-family: "League";
+	src: url("League_Gothic-webfont.ttf");
+}
+
+.aggregate_rating {
+	position: absolute;
+	top: 8px;
+	right: 6px;
+}
+
+.aggregate_rating img {
+	margin-right: 10px;
+}
+
+.star-container {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 16px;
+	height: 80px;
+	background-image: url(/assets/unstar.png);
+}
+
+.star {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-image: url(/assets/star.png);
+}
+
+.star.one {	
+	height: 16px;
+	width: 16px;
+}
+
+.star.two {
+	width: 16px;
+	height: 32px;
+}
+
+.star.three {
+	width: 16px;
+	height: 48px;
+}
+
+.star.four {
+	width: 16px;
+	height: 64px;
+}
+
+.star.five {
+	width: 16px;
+	height: 80px;
+}
+
+.h.star-container {
+	position: relative;
+	height: 16px;
+	width: 80px;
+	left: 0;
+	background-image: url(/assets/unstar.png);
+}
+
+.h.star {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	background-image: url(/assets/star.png);
+}
+
+.h.star.one {	
+	height: 16px;
+	width: 16px;
+}
+
+.h.star.two {
+	height: 16px;
+	width: 32px;
+}
+
+.h.star.three {
+	height: 16px;
+	width: 48px;
+}
+
+.h.star.four {
+	height: 16px;
+	width: 64px;
+}
+
+.h.star.five {
+	height: 16px;
+	width: 80px;
+}
+
+
+h1, h2, hr {
+	font-family: "League", Helvetica;	
+	clear: both;
+}
+
+h1, a {
+	color: rgb(237,72,55);
+}
+
+.movie {
+	position: relative;
+	background-color: #111;
+	float: left; 
+	margin: 5px; 
+	text-align: center; 
+	width: 150px;
+	height: 150px;
+	border:solid 1px #999;
+	padding: 4px;
+	color: #eee;
+	
+	a, a:visited {
+		color: #eee;
+	}
+	
+	img {
+		max-width: 100px; 
+		max-height: 100px;
+	}
+}
+
+.tag-link {
+	color: #48abc5 !important;
+}

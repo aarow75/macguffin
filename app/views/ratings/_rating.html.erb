@@ -1,0 +1,12 @@
+<% movie.ratings.each do |rating| %>
+<tr>
+	<td><%= rating.rater %></td>
+	<td><div class="h star-container"><div class="h star <%= rating.rating.to_i.to_words %>"></div></div></td>
+</tr>
+<tr>
+	<td></td>
+	<td><%= link_to 'Destroy Rating', [rating.movie, rating],
+               :confirm => 'Are you sure?',
+               :method => :delete %></td>
+</tr>
+<% end %>

@@ -1,0 +1,72 @@
+ | <%= link_to 'Edit', edit_movie_path(@movie) %>
+
+<p id="notice"><%= notice %></p>
+
+<h2><%= @movie.title %> (<%= @movie.year %>)</h2>
+<div style="width:50%;min-width:360px; float:right;">
+<img style="" src="<%= @movie.cover %>" />
+</div>
+<div style="width:50%;float:left;">
+<table style="width: 100%;">
+	<tr>
+		<td colspan="2">
+			<div class="h star-container"><div class="h star <%= @movie.rating.to_i.to_words %>"></div></div>
+			<br/>
+			<% @movie.tags.each do |t| %>
+				<% if t.name == "mobile" || t.name == "blu-ray" || t.name == "dvd" || t.name == "ultraviolet" || t.name == "apple" %>
+					<img src='/assets/<%= t.name %>.png' />
+				<% end %>
+			<% end %>
+			<br/>
+			Aggregate rating: <%= @movie.aggregate_rating%>
+			<br/>
+			Averager user rating: <div class="h star-container"><div class="h star <%= @movie.average_user_rating.to_words %>"></div></div>
+		</td>
+	</tr>
+	<tr>
+		<td><b>Lead actor:</b></td>
+		<td><%= @movie.lead_actor %></td>
+	</tr>
+	<tr>
+		<td><b>Director:</b></td>
+		<td><%= @movie.director %></td>
+	</tr>
+	<tr>
+		<td><b>Screenwriter:</b></td>
+		<td><%= @movie.screenwriter %></td>
+	</tr>
+	<tr>
+		<td><b>Rotten Tomatoes Freshness Rating:</b></td>
+		<td><%= @movie.freshness %></td>	
+	</tr>
+	<tr>
+		<td><b>IMDB:</b></td>
+		<td><%= @movie.imdb %></td>	
+	</tr>
+	<tr>
+		<td><b>Notes:</b></td>
+		<td><%= @movie.notes %></td>
+	</tr>
+	<tr>
+		<td colspan="2"><br/><b>Ratings</b></td>
+	</tr>
+	<%= render 'ratings/rating', :movie => @movie %>
+	<tr>
+		<td colspan="2"><br/><b>Add a rating:</b></td>
+	</tr>
+	<%= form_for([@movie, @movie.ratings.build]) do |f| %>
+	<tr>
+		<td><%= f.label :rater %></td>
+		<td><%= f.text_field :rater %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :rating %></td>
+		<td><%= f.number_field :rating, :in => 1...6 %><br/><%= f.submit %></td>
+	</tr>
+	<% end %>
+</table>
+</div>
+
+
+
+

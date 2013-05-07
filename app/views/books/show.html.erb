@@ -1,0 +1,49 @@
+<%= link_to 'New Book', new_book_path %>
+ | <%= link_to 'Edit', edit_book_path(@book) %>
+
+<p id="notice"><%= notice %></p>
+
+<h2><%= @book.title %> (<%= @book.year %>)</h2>
+<div style="width:50%;min-width:360px; float:right;">
+<img style="" src="<%= @book.cover %>" />
+</div>
+<div style="width:50%;float:left;">
+<table style="width: 100%;">
+	<tr>
+		<td colspan="2">
+			<div class="h star-container"><div class="h star <%= @book.rating.to_i.to_words %>"></div></div>
+			<br/>
+			<% @book.tags.each do |t| %>
+				<% if t.name == "mobile" || t.name == "blu-ray" || t.name == "dvd" || t.name == "ultraviolet" || t.name == "apple" %>
+					<img src='/assets/<%= t.name %>.png' />
+				<% end %>
+			<% end %>
+			<br/>
+		</td>
+	</tr>
+	<tr>
+		<td><b>Author:</b></td>
+		<td><%= @book.author %></td>
+	</tr>
+	<tr>
+		<td><b>Illustrator:</b></td>
+		<td><%= @book.illustrator %></td>
+	</tr>
+	<tr>
+		<td><b>Google Books Rating:</b></td>
+		<td><%= @book.average_rating %></td>	
+	</tr>
+	<tr>
+		<td><b># of Reviews:</b></td>
+		<td><%= @book.review_count %></td>	
+	</tr>
+	<tr>
+		<td><b>Notes:</b></td>
+		<td><%= @book.notes %></td>	
+	</tr>
+</table>
+</div>
+
+
+
+
